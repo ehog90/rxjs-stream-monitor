@@ -1,6 +1,18 @@
 # RxJS Stream Monitor
-
 ## Simple utility to monitor the status of an observable
+
+### Requirements
+
+rxjs 5+
+
+### Install
+
+```bash
+npm install rxjs-stream-monitor --save
+
+```
+
+### How to use
 
 Propably you are familiar with this pattern in Angular if you are querying for some data
 
@@ -28,9 +40,11 @@ public class SomeComponent {
 
 ```
 
-With this utility library, you can simplify the status monitoring:
+With this library, you can simplify the status monitoring like this:
 
 ```typescript
+
+import { createMonitor, monitor } from "rxjs-stream-monitor";
 
 public class SomeComponent {
     // ...
@@ -45,8 +59,9 @@ public class SomeComponent {
     }
 }
 
-
 ```
+
+### Example of status binding in Angular
 
 In the Angular template, you can bind the status to loading indicators like this: 
 
@@ -60,6 +75,6 @@ In the Angular template, you can bind the status to loading indicators like this
 Even you can get the number of messages received if you are piping it to an infinit observable / observable with multiple values:
 
 
-```
+```html
 <div class="message-count">Messages Received: {{queryMonitor.pumps}}</div>
 ```
