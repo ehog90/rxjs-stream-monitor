@@ -1,0 +1,35 @@
+{
+  "name": "rxjs-stream-monitor",
+  "version": "0.0.1",
+  "description": "stream monitor utility for rxjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehog90/rxjs-stream-monitor.git"
+  },
+  "keywords": [
+    "rxjs",
+    "stream",
+    "monitor"
+  ],
+  "author": "Bence Ujj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ehog90/rxjs-stream-monitor/issues"
+  },
+  "homepage": "https://github.com/ehog90/rxjs-stream-monitor#readme",
+  "devDependencies": {
+    "rxjs": "*",
+    "typescript": "^4.3.2"
+  },
+  "peerDependencies": {
+    "rxjs": "^5"
+  }
+}
