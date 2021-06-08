@@ -5,14 +5,14 @@
 
 rxjs 5+
 
-### Install
+### Install.
 
 ```bash
 npm install rxjs-stream-monitor --save
 
 ```
 
-### How to use
+### How to use.
 
 Propably you are familiar with this pattern in Angular if you are querying for some data
 
@@ -61,14 +61,14 @@ public class SomeComponent {
 
 ```
 
-### Example of status binding in Angular
+### Example of status binding in Angular.
 
 In the Angular template, you can bind the status to loading indicators like this: 
 
 
 ```html
 <div class="loading" *ngIf="queryMonitor.isActive"></div>
-<div class="error" *ngIf="queryMonitor.isActive">Error: {{queryMonitor.error}}</div>
+<div class="error" *ngIf="queryMonitor.isEr">Error: {{queryMonitor.error}}</div>
 
 ```
 
@@ -77,4 +77,23 @@ Even you can get the number of messages received if you are piping it to an infi
 
 ```html
 <div class="message-count">Messages Received: {{queryMonitor.pumps}}</div>
+```
+
+### You can also use this library for handling status of Promises.
+
+This is useful when you are mixing Promises and Observables.
+
+```typescript
+
+import { createMonitor, monitorPromise } from "rxjs-stream-monitor";
+
+public class SomeComponent {
+    // ...
+    public queryMonitor = createMonitor();
+
+    public async loadSomeData() {
+       const query: Promise<any> = this.httpDataService.querySomeDataUsingPromiseApi();
+       const result = await monitorPromise(this.queryMonitor, query);
+    }
+}
 ```
