@@ -31,7 +31,7 @@
     "jest": "^27.0.6",
     "rxjs": "*",
     "ts-jest": "^27.0.3",
-    "typescript": "^4.3.2"
+    "typescript": "^4.3.5"
   },
   "peerDependencies": {
     "rxjs": "^5 || ^6 || ^7"
