@@ -1,8 +1,8 @@
-import { StreamMonitor } from "./stream-monitor";
+import { StreamMonitor } from './stream-monitor';
 
 export async function monitorPromise<T>(
   monitor: StreamMonitor,
-  promise: Promise<T>
+  promise: Promise<T>,
 ): Promise<T | null> {
   try {
     monitor.isActive = true;
