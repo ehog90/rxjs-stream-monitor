@@ -1,9 +1,11 @@
 export class StreamMonitor {
-  public isActive: boolean = false;
-  public pumps: number = 0;
-  public error: any | null = null;
+  public isActive = false;
+
+  public pumps = 0;
+
+  public error: unknown | null = null;
 }
 
-export function createMonitor() {
+export function createMonitor(): StreamMonitor {
   return new StreamMonitor();
 }

@@ -1,9 +1,7 @@
-import { Observable, OperatorFunction, PartialObserver } from "rxjs";
-import { StreamMonitor } from "./stream-monitor";
+import { Observable, OperatorFunction, PartialObserver } from 'rxjs';
+import { StreamMonitor } from './stream-monitor';
 
-export function monitor<T>(
-  streamMonitor: StreamMonitor
-): OperatorFunction<T, T> {
+export function monitor<T>(streamMonitor: StreamMonitor): OperatorFunction<T, T> {
   return (source$: Observable<T>): Observable<T> =>
     new Observable<T>((observer) => {
       streamMonitor.isActive = true;
@@ -15,7 +13,7 @@ export function monitor<T>(
           streamMonitor.pumps += 1;
           observer.next(value);
         },
-        error: (error: any) => {
+        error: (error) => {
           streamMonitor.isActive = false;
           streamMonitor.error = error;
           observer.error(error);
