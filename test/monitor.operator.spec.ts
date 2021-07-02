@@ -40,7 +40,6 @@ describe('Monitor operator function', () => {
     const streamMonitor = createMonitor();
     const observable = throwError(() => 'This is an error');
     observable.pipe(monitor(streamMonitor)).subscribe({
-      complete: () => {},
       error: () => {
         expect(streamMonitor.isActive).toBeFalsy();
         expect(streamMonitor.pumps).toBe(0);

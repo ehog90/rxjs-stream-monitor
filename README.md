@@ -1,6 +1,13 @@
 # RxJS Stream Monitor
 ## Simple utility to monitor the status of an observable
 
+
+![license](https://img.shields.io/github/license/ehog90/rxjs-stream-monitor)
+![github action status](https://github.com/ehog90/rxjs-stream-monitor/actions/workflows/push-actions.yml/badge.svg?branch=main)
+![npm weekly downloads](https://img.shields.io/npm/dw/rxjs-stream-monitor)
+![npm total downloads](https://img.shields.io/npm/dt/rxjs-stream-monitor)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 ### Requirements
 
 rxjs 5+
