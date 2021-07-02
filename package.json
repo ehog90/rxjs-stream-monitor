@@ -1,6 +1,6 @@
 {
   "name": "rxjs-stream-monitor",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "stream monitor utility for rxjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,8 @@
     "/dist"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,10 @@
   },
   "homepage": "https://github.com/ehog90/rxjs-stream-monitor#readme",
   "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "jest": "^27.0.6",
     "rxjs": "*",
+    "ts-jest": "^27.0.3",
     "typescript": "^4.3.2"
   },
   "peerDependencies": {
