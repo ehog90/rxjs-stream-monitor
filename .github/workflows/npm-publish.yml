@@ -1,4 +1,4 @@
-name: Angular Value Flash npm publish
+name: rxjs-stream-monitor RELEASE
 on:
   release:
     types: [created]

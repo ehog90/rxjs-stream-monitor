@@ -1,4 +1,4 @@
-name: Angular Value Flash CI/CD
+name: rxjs-stream-monitor CI/CD
 on: [push]
 jobs:
   on-push-actions:
