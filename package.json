@@ -1,6 +1,6 @@
 {
   "name": "rxjs-stream-monitor",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "stream monitor utility for rxjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
