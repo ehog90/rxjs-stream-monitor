@@ -4,9 +4,20 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "module": "commonjs",
-    "target": "es2015",
     "declaration": true,
+    "incremental": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "moduleResolution": "node",
+    "stripInternal": true,
+    "esModuleInterop": true ,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "target": "esnext",
   },
   "include": ["src/**/*"],
 }

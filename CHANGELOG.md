@@ -28,3 +28,10 @@
 ### Updated
 
 - Deps.
+
+## [4.0.0] - 2022-12-19
+
+### Updated
+
+- Dependencies
+- Building system (better compatibility with newer Angular versions)
