@@ -2,7 +2,6 @@ import { WritableSignal } from '@angular/core';
 import { Observable, OperatorFunction, PartialObserver } from 'rxjs';
 import { StreamMonitor } from './stream-monitor';
 
-
 export function monitorSignal<T>(
   streamMonitor: WritableSignal<StreamMonitor>,
 ): OperatorFunction<T, T> {
