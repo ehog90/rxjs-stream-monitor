@@ -1,25 +1,21 @@
-import { WritableSignal } from '@angular/core';
 import { Observable, OperatorFunction, PartialObserver } from 'rxjs';
-import { StreamMonitor } from './stream-monitor';
+import { MonitorSignal } from './stream-monitor';
 
-export function monitorSignal<T>(
-  streamMonitor: WritableSignal<StreamMonitor>,
-): OperatorFunction<T, T> {
+export function monitorSignal<T>(streamMonitor: MonitorSignal): OperatorFunction<T, T> {
   return (source$: Observable<T>): Observable<T> =>
     new Observable<T>((observer) => {
-      streamMonitor.set({ isActive: true, error: null, pumps: 0 });
-
+      streamMonitor.reset();
       const wrapper: PartialObserver<T> = {
         next: (value: T) => {
-          streamMonitor.update((monitor) => ({ ...monitor, pumps: monitor.pumps + 1 }));
+          streamMonitor.incrementPumps();
           observer.next(value);
         },
         error: (error) => {
-          streamMonitor.update((monitor) => ({ ...monitor, isActive: false, error }));
+          streamMonitor.setError(error);
           observer.error(error);
         },
         complete: () => {
-          streamMonitor.update((monitor) => ({ ...monitor, isActive: false }));
+          streamMonitor.setInactive();
           observer.complete();
         },
       };

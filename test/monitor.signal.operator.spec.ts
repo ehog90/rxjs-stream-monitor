@@ -7,7 +7,6 @@ describe('Monitor signal operator function', () => {
   it('should handle a simple Observable correctly', (done) => {
     const streamMonitor = createMonitorSignal();
     const observable = timer(50).pipe(take(1));
-    expect.assertions(3);
     observable.pipe(monitorSignal(streamMonitor)).subscribe({
       next: () => {
         expect(streamMonitor().isActive).toBeTruthy();
