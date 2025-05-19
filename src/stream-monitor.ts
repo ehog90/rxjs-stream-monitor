@@ -1,11 +1,16 @@
-export class StreamMonitor {
-  public isActive = false;
+import { signal, WritableSignal } from '@angular/core';
 
-  public pumps = 0;
+export type StreamMonitor = {
+  isActive: boolean;
+  pumps: number;
+  error: unknown | null;
+};
 
-  public error: unknown | null = null;
+/** @deprecated use signal version instead */
+export function createMonitor(): StreamMonitor {
+  return { isActive: false, pumps: 0, error: null };
 }
 
-export function createMonitor(): StreamMonitor {
-  return new StreamMonitor();
+export function createMonitorSignal(): WritableSignal<StreamMonitor> {
+  return signal({ isActive: false, pumps: 0, error: null });
 }
